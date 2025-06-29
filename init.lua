@@ -206,6 +206,12 @@ vim.keymap.set('n', '<Leader>hs', ':split<CR>')
 vim.keymap.set('n', '<Leader>w', ':w<CR>')
 vim.keymap.set('n', '<Leader>q', ':q<CR>')
 
+vim.keymap.set('n', '<Leader>bn', ':bn<CR>', { desc = 'Next Buffer' })
+
+vim.keymap.set('n', '<Leader>bp', ':bp<CR>', { desc = 'Previous Buffer' })
+
+vim.keymap.set('n', '<Leader>bc', ':bd<CR>', { desc = 'Close Current Buffer' })
+
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
