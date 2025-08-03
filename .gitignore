@@ -1,7 +1,7 @@
-tags
-test.sh
-.luarc.json
-nvim
+# Ignore everything by default
+*
 
-spell/
-lazy-lock.json
+# But not these files...
+!/.gitignore
+!/alacritty/
+!/nvim/
