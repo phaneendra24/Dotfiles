@@ -212,6 +212,31 @@ vim.keymap.set('n', '<Leader>bp', ':bp<CR>', { desc = 'Previous Buffer' })
 
 vim.keymap.set('n', '<Leader>bc', ':bd<CR>', { desc = 'Close Current Buffer' })
 
+vim.keymap.set('n', '<C-j>', '5j', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-k>', '5k', { noremap = true, silent = true })
+vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = 'Toggle Neo-tree' })
+vim.keymap.set('n', '<M-k>', ':m .-2<CR>==', { desc = 'Move line up' })
+vim.keymap.set('n', '<M-j>', ':m .+1<CR>==', { desc = 'Move line down' })
+vim.keymap.set('v', '<M-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
+vim.keymap.set('v', '<M-j>', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
+vim.keymap.set('n', 'n', 'nzz', { desc = 'Next search result (centered)' })
+vim.keymap.set('n', 'N', 'Nzz', { desc = 'Previous search result (centered)' })
+vim.keymap.set('v', '<leader>p', '"_dP', { desc = 'Paste without losing yank' })
+vim.keymap.set('n', '<leader>th', ':split | terminal<CR>', { desc = 'Open [T]erminal [H]orizontally' })
+vim.keymap.set('n', '<leader>tv', ':vsplit | terminal<CR>', { desc = 'Open [T]erminal [V]ertically' })
+
+vim.api.nvim_create_user_command('Run', function()
+  local ft = vim.bo.filetype
+  if ft == 'go' then
+    vim.cmd('split | terminal go run ' .. vim.fn.expand '%')
+  elseif ft == 'python' then
+    vim.cmd('split | terminal python3 ' .. vim.fn.expand '%')
+  else
+    print('No run command for filetype: ' .. ft)
+  end
+end, {})
+
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
@@ -697,6 +722,12 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+        html = {},
+        cssls = {},
+        emmet_ls = {
+          filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less', 'svelte' },
+        },
+        gopls = {},
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -986,18 +1017,18 @@ require('lazy').setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.lint',
+  require 'kickstart.plugins.autopairs',
+  require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
