@@ -206,11 +206,7 @@ vim.keymap.set('n', '<Leader>hs', ':split<CR>')
 vim.keymap.set('n', '<Leader>w', ':w<CR>')
 vim.keymap.set('n', '<Leader>q', ':q<CR>')
 
-vim.keymap.set('n', '<Leader>bn', ':bn<CR>', { desc = 'Next Buffer' })
-
-vim.keymap.set('n', '<Leader>bp', ':bp<CR>', { desc = 'Previous Buffer' })
-
-vim.keymap.set('n', '<Leader>bc', ':bd<CR>', { desc = 'Close Current Buffer' })
+vim.keymap.set('n', '<Leader>bd', ':bd<CR>', { desc = 'Close Current Buffer' })
 
 vim.keymap.set('n', '<C-j>', '5j', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', '5k', { noremap = true, silent = true })
@@ -225,6 +221,22 @@ vim.keymap.set('n', 'N', 'Nzz', { desc = 'Previous search result (centered)' })
 vim.keymap.set('v', '<leader>p', '"_dP', { desc = 'Paste without losing yank' })
 vim.keymap.set('n', '<leader>th', ':split | terminal<CR>', { desc = 'Open [T]erminal [H]orizontally' })
 vim.keymap.set('n', '<leader>tv', ':vsplit | terminal<CR>', { desc = 'Open [T]erminal [V]ertically' })
+
+vim.keymap.set('n', '<Tab>', ':bn<CR>')
+vim.keymap.set('n', '<S-Tab>', ':bp<CR>')
+vim.keymap.set('n', '<Leader>x', ':bd<CR>', { desc = 'Close Current Buffer' })
+vim.keymap.set('n', '<Leader>b', '<cmd> enew <CR>', { desc = 'Close Current Buffer' })
+
+-- tabs
+vim.keymap.set('n', '<Leader>to', ':tabnew<CR>')
+vim.keymap.set('n', '<Leader>tx', ':tabClose<CR>')
+vim.keymap.set('n', '<Leader>tn', ':tabn<CR>')
+vim.keymap.set('n', '<Leader>tp', ':tabp<CR>')
+
+-- delete single character without copying to register
+vim.keymap.set('n', 'x', '"_x')
+-- and yank too
+vim.keymap.set('v', 'p', '"_dp')
 
 vim.api.nvim_create_user_command('Run', function()
   local ft = vim.bo.filetype
@@ -991,7 +1003,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'dockerfile', 'css' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
