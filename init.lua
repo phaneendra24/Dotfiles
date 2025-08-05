@@ -209,7 +209,7 @@ vim.keymap.set('n', '<Leader>bd', ':bd<CR>', { desc = 'Close Current Buffer' })
 vim.keymap.set('n', '<C-j>', '5j', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-k>', '5k', { noremap = true, silent = true })
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = 'Toggle Neo-tree' })
+--vim.keymap.set('n', '<leader>e', ':Neotree toggle<CR>', { desc = 'Toggle Neo-tree' })
 vim.keymap.set('n', '<M-k>', ':m .-2<CR>==', { desc = 'Move line up' })
 vim.keymap.set('n', '<M-j>', ':m .+1<CR>==', { desc = 'Move line down' })
 vim.keymap.set('v', '<M-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
@@ -1039,7 +1039,7 @@ require('lazy').setup({
   require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.neo-tree',
+  --require 'kickstart.plugins.neo-tree',
   require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
