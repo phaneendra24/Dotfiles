@@ -201,8 +201,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-vim.keymap.set('n', '<Leader>vs', ':vsplit<CR>')
-vim.keymap.set('n', '<Leader>hs', ':split<CR>')
 vim.keymap.set('n', '<Leader>w', ':w<CR>')
 vim.keymap.set('n', '<Leader>q', ':q<CR>')
 
@@ -232,6 +230,11 @@ vim.keymap.set('n', '<Leader>to', ':tabnew<CR>')
 vim.keymap.set('n', '<Leader>tx', ':tabClose<CR>')
 vim.keymap.set('n', '<Leader>tn', ':tabn<CR>')
 vim.keymap.set('n', '<Leader>tp', ':tabp<CR>')
+
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = '[G]oto [D]efinition' })
+vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { desc = '[G]oto [D]eclaration' })
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = '[G]oto [I]mplementation' })
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = '[G]oto [R]eferences' })
 
 -- delete single character without copying to register
 vim.keymap.set('n', 'x', '"_x')
