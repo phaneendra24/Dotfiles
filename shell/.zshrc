@@ -116,16 +116,16 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+#source <(ng completion script)
 export PATH="$PATH:/opt/nvim/"
 export PATH="$PATH:$HOME/go/bin"
 
 
-alias cvi='nvim $(fzf -m --preview="batcat --color=always {}")'
-alias c='code $(fzf -m --preview="batcat --color=always {}")'
-alias cf='cd $(find . -type d | fzf)'
+#alias cvi='nvim $(fzf -m --preview="batcat --color=always {}")'
+#alias c='code $(fzf -m --preview="batcat --color=always {}")'
+#alias cf='cd $(find . -type d | fzf)'
 
-source <(fzf --zsh)
+#source <(fzf --zsh)
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
@@ -137,3 +137,7 @@ source <(fzf --zsh)
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+eval "$(zoxide init zsh)"
+
+
+alias cd=z

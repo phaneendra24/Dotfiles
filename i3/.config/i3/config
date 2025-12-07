@@ -373,14 +373,9 @@ exec --no-startup-id kdeconnect-indicator
 
 exec_always --no-startup-id bash -c 'while true; do ~/.local/bin/battery-alerts.sh; sleep 10; done'
 
-# --- ClipSE Clipboard Manager ---
-# Start the clipse listener (clipboard daemon)
+# Clipboard Manager as floating popup
+for_window [title="Clipboard Manager"] floating enable, border none, resize set 700 500, move position center
 
-exec_always --no-startup-id clipse -listen &
+# Keybinding (optional)
+bindsym $mod+v exec --no-startup-id /usr/local/bin/clipboard-manager gui
 
-
-
-# show clipboard popup
-bindsym $mod+v exec --no-startup-id /home/you/bin/clipcli show
-
-for_window [title="Clipboard"] floating enable
