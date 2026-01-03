@@ -25,6 +25,17 @@ hide_edge_borders both
 # is used in the bar {} block below.
 
 font pango:monospace 8
+
+# Gaps configuration
+gaps inner 8
+gaps outer 4
+
+# Remove window title bars for a cleaner look with gaps
+default_border pixel 2
+default_floating_border pixel 2
+
+# Smart gaps - only show gaps when there's more than one window
+smart_gaps on
  
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 
@@ -53,6 +64,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 
 exec --no-startup-id nm-applet
+
+# Picom compositor for rounded corners and shadows
+exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
  
 # Use pactl to adjust volume in PulseAudio.
 
@@ -313,13 +327,14 @@ bindsym $mod+r mode "resize"
 
 # finds out, if available)
 
-bar {
- 
-    position top 
+# Disabled in favor of Polybar
+# bar {
+#     position top 
+#     status_command i3status
+# }
 
-	status_command i3status
-
-}
+# Launch Polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
  
  
  
@@ -379,3 +394,8 @@ for_window [title="Clipboard Manager"] floating enable, border none, resize set 
 # Keybinding (optional)
 bindsym $mod+v exec --no-startup-id /usr/local/bin/clipboard-manager gui
 
+
+exec --no-startup-id nitrogen --restore
+
+
+bindsym $mod+q exec --no-startup-id ~/.config/i3/lock.sh
