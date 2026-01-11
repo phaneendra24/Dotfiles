@@ -320,9 +320,13 @@ bar {
 	status_command i3status
 
 }
- 
- 
- 
+# personal laptop 
+exec_always xinput set-prop "ELAN230C:00 04F3:30B7 Touchpad" "libinput Tapping Enabled" 1
+exec_always xinput set-prop "ELAN230C:00 04F3:30B7 Touchpad" "libinput Natural Scrolling Enabled" 1
+exec_always xinput set-prop "ELAN230C:00 04F3:30B7 Touchpad" "libinput Scrolling Pixel Distance" 10
+exec_always xinput set-prop "ELAN230C:00 04F3:30B7 Touchpad" "libinput Accel Speed" 0.4
+
+#office laptop
 exec_always xinput set-prop "BLTP7853:00 347D:7853 Touchpad" "libinput Tapping Enabled" 1
 
 exec_always  xinput set-prop "BLTP7853:00 347D:7853 Touchpad" "libinput Natural Scrolling Enabled" 1
@@ -330,7 +334,8 @@ exec_always  xinput set-prop "BLTP7853:00 347D:7853 Touchpad" "libinput Natural 
 exec_always  xinput set-prop  "BLTP7853:00 347D:7853 Touchpad""libinput Scrolling pixel Distance" 10
 
 exec_always xinput --set-prop  "BLTP7853:00 347D:7853 Touchpad""libinput Accel Speed" 0.4
- 
+
+
 # Screen brightness controls
 
 bindsym XF86MonBrightnessUp exec brightnessctl s 10%+ # increase screen brightness
@@ -373,9 +378,9 @@ exec --no-startup-id kdeconnect-indicator
 
 exec_always --no-startup-id bash -c 'while true; do ~/.local/bin/battery-alerts.sh; sleep 10; done'
 
-# Clipboard Manager as floating popup
+# # Clipboard Manager as floating popup
 for_window [title="Clipboard Manager"] floating enable, border none, resize set 700 500, move position center
-
-# Keybinding (optional)
+#
+ # Keybinding (optional)
 bindsym $mod+v exec --no-startup-id /usr/local/bin/clipboard-manager gui
-
+#
