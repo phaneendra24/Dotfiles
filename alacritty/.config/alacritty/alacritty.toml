@@ -22,7 +22,7 @@ padding = { x = 18, y = 18 }
 # Background opacity (0.0 to 1.0)
 
 
-opacity = 0.9
+opacity = 0.8
  
 # Enable blur for a 'frosted glass' effect
 
