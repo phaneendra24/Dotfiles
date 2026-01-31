@@ -141,3 +141,6 @@ eval "$(zoxide init zsh)"
 
 
 alias cd=z
+
+# opencode
+export PATH=/home/phaneendra/.opencode/bin:$PATH

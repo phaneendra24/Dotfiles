@@ -9,10 +9,10 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # Launch polybar on all monitors
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload main &
+    MONITOR=$m polybar --reload --config=/home/phaneendra/Dotfiles/polybar/.config/polybar/config.ini main &
   done
 else
-  polybar --reload main &
+  polybar --reload --config=/home/phaneendra/Dotfiles/polybar/.config/polybar/config.ini main &
 fi
 
 echo "Polybar launched..."

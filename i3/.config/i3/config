@@ -328,10 +328,10 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 # Disabled in favor of Polybar
-# bar {
-#     position top 
-#     status_command i3status
-# }
+bar {
+    position top 
+    status_command i3status
+}
 
 # personal laptop 
 exec_always xinput set-prop "ELAN230C:00 04F3:30B7 Touchpad" "libinput Tapping Enabled" 1
@@ -341,7 +341,7 @@ exec_always xinput set-prop "ELAN230C:00 04F3:30B7 Touchpad" "libinput Accel Spe
 
 #office laptop
 # Launch Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# exec_always --no-startup-id ~/.config/polybar/launch.sh
  
  
  
@@ -407,3 +407,4 @@ exec --no-startup-id nitrogen --restore
 
 
 bindsym $mod+q exec --no-startup-id ~/.config/i3/lock.sh
+
