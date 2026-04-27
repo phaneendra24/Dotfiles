@@ -26,16 +26,29 @@ hide_edge_borders both
 
 font pango:monospace 8
 
+focus_follows_mouse no
+mouse_warping none
+workspace_auto_back_and_forth yes
+focus_on_window_activation smart
+popup_during_fullscreen smart
+smart_borders on
+
 # Gaps configuration
 gaps inner 8
 gaps outer 4
 
 # Remove window title bars for a cleaner look with gaps
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 1
+default_floating_border pixel 1
 
-# Smart gaps - only show gaps when there's more than one window
-smart_gaps on
+client.focused          #f4d06f #121217 #f3e9d2 #27212b #f4d06f
+client.focused_inactive #27212b #121217 #b8ab93 #27212b #27212b
+client.unfocused        #1b1820 #121217 #8f8575 #1b1820 #1b1820
+client.urgent           #c54f3b #121217 #f3e9d2 #c54f3b #c54f3b
+client.placeholder      #121217 #121217 #7e6f5e #121217 #121217
+
+# Keep outer gaps even with a single window so the layout stays consistent
+smart_gaps off
  
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 
@@ -108,6 +121,7 @@ bindsym $mod+w kill
 #  bindsym $mod+d exec --no-startup-id rofi -show drun
 
 bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
+bindsym $mod+Shift+d exec --no-startup-id rofi -show window -theme ~/.config/rofi/launchers/type-1/style-16.rasi
  
 # A more modern dmenu replacement is rofi:
 
@@ -182,6 +196,7 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 
 bindsym $mod+space focus mode_toggle
+bindsym $mod+Tab workspace back_and_forth
  
 # focus the parent container
 
@@ -328,10 +343,10 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 # Disabled in favor of Polybar
-bar {
-    position top 
-    status_command i3status
-}
+# bar {
+#     position top 
+#     status_command i3status
+# }
 
 # personal laptop 
 exec_always xinput set-prop "ELAN230C:00 04F3:30B7 Touchpad" "libinput Tapping Enabled" 1
@@ -341,7 +356,7 @@ exec_always xinput set-prop "ELAN230C:00 04F3:30B7 Touchpad" "libinput Accel Spe
 
 #office laptop
 # Launch Polybar
-# exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh
  
  
  
@@ -407,4 +422,3 @@ exec --no-startup-id nitrogen --restore
 
 
 bindsym $mod+q exec --no-startup-id ~/.config/i3/lock.sh
-

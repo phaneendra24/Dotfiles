@@ -1,0 +1,14 @@
+/**
+ *
+ * Custom storm palette for the anime desktop
+ *
+ **/
+
+* {
+    background:     #c40c1016;
+    background-alt: #a9161d26;
+    foreground:     #f3e9d2;
+    selected:       #f4d06f;
+    active:         #9ed072;
+    urgent:         #c54f3b;
+}

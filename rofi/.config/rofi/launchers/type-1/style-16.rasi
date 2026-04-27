@@ -1,0 +1,142 @@
+/**
+ *
+ * Custom launcher theme for the storm anime desktop
+ *
+ **/
+
+configuration {
+    modi:                       "drun,run,filebrowser";
+    show-icons:                 true;
+    display-drun:               "󰀻 Apps";
+    display-run:                " Run";
+    display-filebrowser:        " Files";
+    display-window:             " Windows";
+    drun-display-format:        "{name}";
+    window-format:              "{w} · {c}";
+}
+
+@import "shared/colors.rasi"
+@import "shared/fonts.rasi"
+
+* {
+    border-colour:               #55f4d06f;
+    handle-colour:               #88f4d06f;
+    background-colour:           transparent;
+    foreground-colour:           var(foreground);
+    alternate-background:        var(background-alt);
+    normal-background:           transparent;
+    normal-foreground:           var(foreground);
+    urgent-background:           var(urgent);
+    urgent-foreground:           #111016;
+    active-background:           var(active);
+    active-foreground:           #111016;
+    selected-normal-background:  var(selected);
+    selected-normal-foreground:  #111016;
+    alternate-normal-background: transparent;
+    alternate-normal-foreground: var(foreground);
+}
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       920px;
+    border:                      1px;
+    border-radius:               24px;
+    border-color:                @border-colour;
+    background-color:            #b30a0d12;
+    background-image:            linear-gradient(180, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+}
+
+mainbox {
+    spacing:                     20px;
+    padding:                     28px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview", "mode-switcher" ];
+}
+
+inputbar {
+    spacing:                     14px;
+    padding:                     18px 22px;
+    border:                      0px;
+    border-radius:               18px;
+    background-color:            #b81a2029;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    background-color:            transparent;
+    text-color:                  var(selected);
+    font:                        "JetBrains Mono Nerd Font Bold 11";
+    str:                         "";
+}
+
+entry {
+    background-color:            transparent;
+    text-color:                  inherit;
+    placeholder:                 "Launch into the storm...";
+    placeholder-color:           #c3b59f;
+}
+
+listview {
+    columns:                     2;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    fixed-height:                true;
+    scrollbar:                   true;
+    spacing:                     10px;
+    background-color:            transparent;
+}
+
+scrollbar {
+    handle-width:                6px;
+    handle-color:                @handle-colour;
+    border-radius:               10px;
+    background-color:            #5517171d;
+}
+
+element {
+    spacing:                     12px;
+    padding:                     14px 16px;
+    border:                      1px;
+    border-radius:               18px;
+    border-color:                #18f4d06f;
+    background-color:            #6f1a2029;
+    text-color:                  @foreground-colour;
+}
+
+element selected.normal {
+    background-color:            var(selected);
+    text-color:                  #111016;
+    border-color:                #88f4d06f;
+}
+
+element-icon {
+    size:                        24px;
+    background-color:            transparent;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+}
+
+mode-switcher {
+    spacing:                     12px;
+    background-color:            transparent;
+}
+
+button {
+    padding:                     12px 16px;
+    border-radius:               16px;
+    background-color:            #7c1a2029;
+    text-color:                  #d8cdb9;
+}
+
+button selected {
+    background-color:            #a52a313c;
+    text-color:                  var(selected);
+}
