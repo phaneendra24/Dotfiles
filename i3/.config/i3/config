@@ -422,3 +422,6 @@ exec --no-startup-id nitrogen --restore
 
 
 bindsym $mod+q exec --no-startup-id ~/.config/i3/lock.sh
+
+# For nightlight
+exec --no-startup-id redshift -l 17.38:78.48 -t 6500:3700

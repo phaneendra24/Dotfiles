@@ -30,37 +30,44 @@ sudo pacman -S i3-wm polybar picom rofi alacritty neovim tmux zsh stow
 | `zsh`       | Shell                                   |
 | `stow`      | Symlink manager for dotfiles            |
 
-### Utilities
+### Utilities & Polybar Modules
 
 ```bash
 # Ubuntu/Debian
-sudo apt install brightnessctl flameshot dunst nitrogen network-manager i3lock xss-lock dex
+sudo apt install brightnessctl flameshot dunst nitrogen network-manager i3lock xss-lock dex playerctl jq xdotool fonts-font-awesome
 
 # Arch
-sudo pacman -S brightnessctl flameshot dunst nitrogen networkmanager i3lock xss-lock dex
+sudo pacman -S brightnessctl flameshot dunst nitrogen networkmanager i3lock xss-lock dex playerctl jq xdotool ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols-mono otf-font-awesome
 ```
 
-| Package                   | Description                     |
-| ------------------------- | ------------------------------- |
-| `brightnessctl`           | Screen brightness control       |
-| `flameshot`               | Screenshot tool                 |
-| `dunst`                   | Notification daemon             |
-| `nitrogen`                | Wallpaper manager               |
-| `network-manager`         | Network management              |
-| `nm-applet`               | NetworkManager tray icon        |
-| `i3lock`                  | Screen locker                   |
-| `xss-lock`                | Auto-lock on suspend            |
-| `dex`                     | XDG autostart                   |
-| `pulseaudio` / `pipewire` | Audio (+ `pavucontrol` for GUI) |
+> **Tip:** You can also run `./polybar/.config/polybar/setup.sh` to automatically install all dependencies for your system!
+
+| Package                   | Description                                     |
+| ------------------------- | ----------------------------------------------- |
+| `brightnessctl`           | Screen brightness control                       |
+| `flameshot`               | Screenshot tool                                 |
+| `dunst`                   | Notification daemon (with Polybar DND toggle)   |
+| `nitrogen`                | Wallpaper manager                               |
+| `network-manager`         | Network management                              |
+| `nm-applet`               | NetworkManager tray icon                        |
+| `i3lock`                  | Screen locker                                   |
+| `xss-lock`                | Auto-lock on suspend                            |
+| `dex`                     | XDG autostart                                   |
+| `pulseaudio` / `pipewire` | Audio (+ `pavucontrol` for GUI)                 |
+| `playerctl`               | Media player controller (Polybar music module)  |
+| `jq`                      | JSON parsing for Polybar GitHub/VPN scripts     |
+| `xdotool`                 | Window tracking for Polybar active Git status   |
 
 ### Fonts
 
 ```bash
-# Ubuntu/Debian - Install Nerd Font for polybar icons
-sudo apt install fonts-jetbrains-mono
+# Arch:
+sudo pacman -S ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols-mono otf-font-awesome
 
-# Or download JetBrainsMono Nerd Font from:
+# Ubuntu/Debian / Manual:
+# Download JetBrainsMono Nerd Font & Symbols Nerd Font Mono from:
 # https://www.nerdfonts.com/font-downloads
+# Extract to ~/.local/share/fonts/ and run fc-cache -fv
 ```
 
 ### Optional
@@ -101,8 +108,8 @@ dotfiles/
 ├── alacritty/     # Terminal config
 ├── i3/            # i3wm config (gaps, keybinds)
 ├── nvim/          # Neovim config
-├── picom/         # Compositor (rounded corners)
-├── polybar/       # Status bar (Catppuccin theme)
+├── picom/         # Compositor (rounded corners, blur)
+├── polybar/       # Status bar (Storm Forge floating pill design)
 ├── rofi/          # App launcher
 ├── shell/         # .zshrc
 └── tmux/          # Tmux config
@@ -123,7 +130,7 @@ dotfiles/
 
 ## 🎨 Theme
 
-- **Color Scheme**: Catppuccin Mocha
-- **Gaps**: Inner 8px, Outer 4px
-- **Corners**: 10px radius (picom)
-- **Bar**: Polybar with developer modules
+- **Color Scheme**: Storm (void black `#101016`, lightning gold `#f4d06f`, ember `#c54f3b`)
+- **Gaps**: Inner 8px, Outer 4px, Top 42px (reserves space for floating bar)
+- **Corners**: 18px radius (picom)
+- **Bar**: Storm Forge Polybar ([documentation](polybar/README.md)) with floating pill capsules & developer modules

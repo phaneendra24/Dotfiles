@@ -1,5 +1,5 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# Ensure user binaries are in PATH
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -144,3 +144,24 @@ alias cd=z
 
 # opencode
 export PATH=/home/phaneendra/.opencode/bin:$PATH
+
+# pnpm
+export PNPM_HOME="/home/phaneendra/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/phaneendra/google-cloud-sdk/path.zsh.inc' ]; then . '/home/phaneendra/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/phaneendra/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/phaneendra/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/phaneendra/.local/bin:$PATH"
+
+
+alias hms="hasura migrate status --admin-secret"
