@@ -1,6 +1,9 @@
 # Ensure user binaries are in PATH
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
 
+# Default terminal for launchers that respect TERMINAL.
+export TERMINAL=ghostty
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 

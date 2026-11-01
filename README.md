@@ -87,6 +87,9 @@ sudo pacman -S ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols-mono otf-font-awes
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+Ghostty is the default terminal for Hyprland, i3, Rofi, and bar shortcuts.
+Install Ghostty before applying the configs; the Alacritty configuration is kept as an optional fallback.
+
 ## 🚀 Installation
 
 ```bash
@@ -95,7 +98,7 @@ git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
 # Stow all configs
-stow alacritty i3 nvim picom polybar rofi shell tmux
+stow ghostty i3 nvim picom polybar rofi shell tmux
 
 # Reload i3
 i3-msg reload
@@ -105,7 +108,8 @@ i3-msg reload
 
 ```
 dotfiles/
-├── alacritty/     # Terminal config
+├── ghostty/      # Default terminal config and XDG terminal preference
+├── alacritty/    # Previous terminal config (optional)
 ├── i3/            # i3wm config (gaps, keybinds)
 ├── nvim/          # Neovim config
 ├── picom/         # Compositor (rounded corners, blur)

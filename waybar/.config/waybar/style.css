@@ -55,6 +55,7 @@ tooltip label {
 #battery,
 #tray,
 #custom-media,
+#custom-notification,
 #custom-power {
     padding: 0 12px;
     margin: 4px 2px;
@@ -289,6 +290,20 @@ tooltip label {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background: rgba(247, 118, 142, 0.15);
+}
+
+/* ── Notification Bell ── */
+#custom-notification {
+    color: #bb9af7;
+    font-size: 15px;
+    padding: 0 10px;
+    background: rgba(187, 154, 247, 0.06);
+    border: 1px solid rgba(187, 154, 247, 0.1);
+}
+
+#custom-notification:hover {
+    background: rgba(187, 154, 247, 0.2);
+    color: #c0caf5;
 }
 
 /* ── Power ── */

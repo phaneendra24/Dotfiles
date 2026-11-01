@@ -1,39 +1,28 @@
 /**
- *
- * Custom launcher theme for the storm anime desktop
- *
+ * ╔══════════════════════════════════════════════════════════════════╗
+ * ║  Rofi Launcher — Hyprland Tokyo Night Glassmorphism              ║
+ * ║  Theme: Sapphire / Lavender / Cyan (No yellow / gold)           ║
+ * ╚══════════════════════════════════════════════════════════════════╝
  **/
 
 configuration {
-    modi:                       "drun,run,filebrowser";
+    modi:                       "drun,run,window,filebrowser";
     show-icons:                 true;
     display-drun:               "󰀻 Apps";
     display-run:                " Run";
-    display-filebrowser:        " Files";
     display-window:             " Windows";
+    display-filebrowser:        " Files";
     drun-display-format:        "{name}";
-    window-format:              "{w} · {c}";
+    window-format:              "{w} · {c} · {t}";
 }
 
-@import "shared/colors.rasi"
-@import "shared/fonts.rasi"
-
 * {
-    border-colour:               #8af4d06f;
-    handle-colour:               #ccf4d06f;
-    background-colour:           transparent;
-    foreground-colour:           #f5efdf;
-    alternate-background:        #de101216;
-    normal-background:           transparent;
-    normal-foreground:           #f5efdf;
-    urgent-background:           #9d3a2d;
-    urgent-foreground:           #fff4ef;
-    active-background:           #425133;
-    active-foreground:           #f6eedb;
-    selected-normal-background:  #f4d06f;
-    selected-normal-foreground:  #15120f;
-    alternate-normal-background: transparent;
-    alternate-normal-foreground: #f3ead7;
+    font:                        "FiraCode Nerd Font 11";
+    background-color:            transparent;
+    text-color:                  #c0caf5;
+    margin:                      0;
+    padding:                     0;
+    spacing:                     0;
 }
 
 window {
@@ -41,106 +30,111 @@ window {
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       760px;
+    width:                       680px;
     border:                      1px;
-    border-radius:               28px;
-    border-color:                @border-colour;
-    background-color:            #e108090c;
-    background-image:            linear-gradient(180, rgba(255,255,255,0.10), rgba(255,255,255,0.02));
+    border-radius:               18px;
+    border-color:                rgba(122, 162, 247, 0.35);
+    background-color:            rgba(15, 17, 26, 0.72);
 }
 
 mainbox {
-    spacing:                     18px;
-    padding:                     30px;
+    spacing:                     14px;
+    padding:                     24px;
     background-color:            transparent;
     children:                    [ "inputbar", "listview", "mode-switcher" ];
 }
 
 inputbar {
-    spacing:                     16px;
-    padding:                     20px 24px;
+    spacing:                     12px;
+    padding:                     12px 18px;
     border:                      1px;
-    border-radius:               22px;
-    border-color:                #66fff1ca;
-    background-color:            #ef181b21;
+    border-radius:               12px;
+    border-color:                rgba(122, 162, 247, 0.22);
+    background-color:            rgba(26, 29, 45, 0.65);
     children:                    [ "prompt", "entry" ];
 }
 
 prompt {
-    background-color:            transparent;
-    text-color:                  #f4d06f;
-    font:                        "JetBrains Mono Nerd Font Bold 13";
-    str:                         "";
+    text-color:                  #7dcfff;
+    font:                        "FiraCode Nerd Font Bold 12";
+    vertical-align:              0.5;
 }
 
 entry {
-    background-color:            transparent;
-    text-color:                  #fff8ea;
-    placeholder:                 "Search apps";
-    placeholder-color:           #bcae92;
+    text-color:                  #c0caf5;
+    placeholder:                 "Search applications or commands...";
+    placeholder-color:           rgba(154, 165, 206, 0.45);
+    vertical-align:              0.5;
 }
 
 listview {
     columns:                     1;
-    lines:                       8;
+    lines:                       7;
     cycle:                       true;
     dynamic:                     true;
-    fixed-height:                true;
-    scrollbar:                   true;
-    spacing:                     12px;
+    scrollbar:                   false;
+    spacing:                     6px;
     background-color:            transparent;
-}
-
-scrollbar {
-    handle-width:                6px;
-    handle-color:                @handle-colour;
-    border-radius:               10px;
-    background-color:            #40121318;
 }
 
 element {
     spacing:                     14px;
-    padding:                     16px 18px;
+    padding:                     10px 14px;
     border:                      1px;
-    border-radius:               20px;
-    border-color:                #26ffffff;
-    background-color:            #c913151a;
-    text-color:                  @foreground-colour;
+    border-radius:               10px;
+    border-color:                transparent;
+    background-color:            transparent;
+    text-color:                  #a9b1d6;
 }
 
 element selected.normal {
-    background-color:            #f4d06f;
-    text-color:                  #15120f;
-    border-color:                #fff4d4;
+    background-color:            rgba(122, 162, 247, 0.18);
+    text-color:                  #7dcfff;
+    border-color:                rgba(122, 162, 247, 0.45);
+}
+
+element selected.active {
+    background-color:            rgba(187, 154, 247, 0.22);
+    text-color:                  #bb9af7;
+    border-color:                rgba(187, 154, 247, 0.45);
+}
+
+element selected.urgent {
+    background-color:            rgba(247, 118, 142, 0.25);
+    text-color:                  #f7768e;
+    border-color:                rgba(247, 118, 142, 0.50);
 }
 
 element-icon {
     size:                        28px;
     background-color:            transparent;
+    vertical-align:              0.5;
 }
 
 element-text {
     background-color:            transparent;
     text-color:                  inherit;
     vertical-align:              0.5;
+    font:                        "FiraCode Nerd Font 11";
 }
 
 mode-switcher {
-    spacing:                     10px;
+    spacing:                     8px;
     background-color:            transparent;
 }
 
 button {
-    padding:                     10px 14px;
+    padding:                     7px 12px;
     border:                      1px;
-    border-radius:               14px;
-    border-color:                #20ffffff;
-    background-color:            #96111216;
-    text-color:                  #d8ccb4;
+    border-radius:               10px;
+    border-color:                transparent;
+    background-color:            rgba(26, 29, 45, 0.40);
+    text-color:                  #565f89;
+    font:                        "FiraCode Nerd Font 10";
 }
 
 button selected {
-    background-color:            #3b2b11;
-    text-color:                  #f4d06f;
-    border-color:                #8af4d06f;
+    background-color:            rgba(122, 162, 247, 0.18);
+    text-color:                  #7dcfff;
+    border-color:                rgba(122, 162, 247, 0.35);
 }

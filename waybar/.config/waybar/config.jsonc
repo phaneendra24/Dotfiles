@@ -33,6 +33,7 @@
         "backlight",
         "battery",
         "tray",
+        "custom/notification",
         "custom/power"
     ],
 
@@ -136,14 +137,14 @@
         "interval": 3,
         "format": "󰻠 {usage}%",
         "tooltip": true,
-        "on-click": "alacritty -e htop"
+        "on-click": "ghostty -e htop"
     },
 
     "memory": {
         "interval": 3,
         "format": "󰍛 {percentage}%",
         "tooltip-format": "{used:0.1f}G / {total:0.1f}G",
-        "on-click": "alacritty -e htop"
+        "on-click": "ghostty -e htop"
     },
 
     "network": {
@@ -199,6 +200,27 @@
     "tray": {
         "icon-size": 15,
         "spacing": 8
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󰂚<span foreground='#f7768e'><sup>●</sup></span>",
+            "none": "󰂜",
+            "dnd-notification": "󰂛<span foreground='#f7768e'><sup>●</sup></span>",
+            "dnd-none": "󰂛",
+            "inhibited-notification": "󰂚<span foreground='#f7768e'><sup>●</sup></span>",
+            "inhibited-none": "󰂜",
+            "dnd-inhibited-notification": "󰂛<span foreground='#f7768e'><sup>●</sup></span>",
+            "dnd-inhibited-none": "󰂛"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -df -p",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
 
     "custom/power": {

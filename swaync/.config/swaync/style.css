@@ -1,0 +1,189 @@
+/* ╔══════════════════════════════════════════════════════════════════╗
+   ║  SwayNC Style — Tokyo Night Glassmorphism                       ║
+   ║  Theme: Sapphire · Lavender · Cyan                              ║
+   ╚══════════════════════════════════════════════════════════════════╝ */
+
+* {
+  font-family: "FiraCode Nerd Font", "JetBrainsMono Nerd Font", monospace;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+/* ── Control Center Window ── */
+.control-center {
+  background: rgba(15, 17, 26, 0.82);
+  border: 1px solid rgba(122, 162, 247, 0.35);
+  border-radius: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  padding: 16px;
+  color: #c0caf5;
+}
+
+/* ── Widget Boxes ── */
+.widget-title,
+.widget-dnd,
+.widget-mpris,
+.widget-volume,
+.widget-backlight {
+  background: rgba(26, 29, 45, 0.55);
+  border: 1px solid rgba(122, 162, 247, 0.15);
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+/* ── Title Widget ── */
+.widget-title > label {
+  font-size: 15px;
+  font-weight: bold;
+  color: #7dcfff;
+}
+
+.widget-title > button {
+  background: rgba(247, 118, 142, 0.15);
+  border: 1px solid rgba(247, 118, 142, 0.35);
+  border-radius: 8px;
+  color: #f7768e;
+  padding: 4px 10px;
+}
+
+.widget-title > button:hover {
+  background: rgba(247, 118, 142, 0.30);
+  color: #ff9e9e;
+}
+
+/* ── DND (Do Not Disturb) ── */
+.widget-dnd {
+  padding: 8px 12px;
+}
+
+.widget-dnd > label {
+  font-size: 13px;
+  color: #bb9af7;
+  font-weight: 600;
+}
+
+.widget-dnd > switch {
+  border-radius: 12px;
+  border: 1px solid rgba(122, 162, 247, 0.2);
+  background: rgba(30, 32, 48, 0.6);
+}
+
+.widget-dnd > switch:checked {
+  background: #f7768e;
+  border-color: #f7768e;
+}
+
+.widget-dnd > switch slider {
+  border-radius: 10px;
+  background: #c0caf5;
+}
+
+/* ── Sliders (Volume & Backlight) ── */
+.widget-volume,
+.widget-backlight {
+  padding: 8px 12px;
+}
+
+.widget-volume > label,
+.widget-backlight > label {
+  font-size: 15px;
+  color: #7dcfff;
+  margin-right: 8px;
+}
+
+scale trough {
+  background: rgba(30, 32, 48, 0.6);
+  border: 1px solid rgba(122, 162, 247, 0.15);
+  border-radius: 8px;
+  min-height: 8px;
+}
+
+scale highlight {
+  background: #7aa2f7;
+  border-radius: 8px;
+}
+
+/* ── MPRIS (Media Player) ── */
+.widget-mpris {
+  padding: 12px;
+}
+
+.widget-mpris-player {
+  padding: 6px 0;
+}
+
+.widget-mpris-title {
+  font-weight: bold;
+  color: #7dcfff;
+  font-size: 13px;
+}
+
+.widget-mpris-subtitle {
+  color: #9aa5ce;
+  font-size: 11px;
+}
+
+.widget-mpris button {
+  background: rgba(122, 162, 247, 0.12);
+  border: 1px solid rgba(122, 162, 247, 0.25);
+  border-radius: 8px;
+  color: #c0caf5;
+  padding: 4px 8px;
+  margin: 0 3px;
+}
+
+.widget-mpris button:hover {
+  background: rgba(122, 162, 247, 0.3);
+  color: #7dcfff;
+}
+
+/* ── Notification Cards ── */
+.notification-row {
+  outline: none;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+  opacity: 1;
+}
+
+.notification {
+  background: rgba(26, 29, 45, 0.75);
+  border: 1px solid rgba(122, 162, 247, 0.25);
+  border-radius: 12px;
+  margin: 6px 0;
+  padding: 12px;
+  color: #c0caf5;
+}
+
+.notification.critical {
+  border-color: rgba(247, 118, 142, 0.6);
+  background: rgba(247, 118, 142, 0.15);
+}
+
+.notification-content {
+  padding: 4px;
+}
+
+.summary {
+  font-weight: bold;
+  font-size: 13px;
+  color: #7dcfff;
+}
+
+.body {
+  font-size: 12px;
+  color: #a9b1d6;
+}
+
+.close-button {
+  background: rgba(247, 118, 142, 0.15);
+  color: #f7768e;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.close-button:hover {
+  background: rgba(247, 118, 142, 0.35);
+}
