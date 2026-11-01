@@ -1,4 +1,11 @@
+theme = Catppuccin Mocha
+font-family = JetBrainsMono Nerd Font
 font-size = 19
 
 window-padding-x = 10
 window-padding-y = 10
+window-decoration = false
+background-opacity = 0.75
+
+# Explicit -e commands override this. Avoid nesting inside an existing tmux.
+command = /bin/sh -c 'if [ -n "$TMUX" ]; then exec /usr/bin/zsh; else exec /usr/bin/tmux new-session; fi'

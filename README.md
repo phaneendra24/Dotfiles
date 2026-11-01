@@ -90,6 +90,23 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 Ghostty is the default terminal for Hyprland, i3, Rofi, and bar shortcuts.
 Install Ghostty before applying the configs; the Alacritty configuration is kept as an optional fallback.
 
+### Ghostty appearance and tmux
+
+Ghostty uses Catppuccin Mocha, JetBrainsMono Nerd Font at size 19, 10px padding,
+and 75% opacity. Hyprland supplies the background blur. Normal Ghostty windows
+start a fresh tmux session with zsh; explicit commands such as `ghostty -e htop`
+run directly. The session picker is deferred.
+
+The native tmux top bar shows the session in green, the active window in blue,
+other windows in peach, and the current folder in pink. No tmux plugins are required.
+Ctrl+B remains the prefix; mouse support, Vim pane navigation, and copy mode are retained.
+
+Before first applying the tmux package, back up an existing regular `~/.tmux.conf`
+so Stow can link the repository version. Run `stow --target="$HOME" ghostty tmux`
+from this repository. Reload Ghostty with Ctrl+Shift+, and open a new window to
+apply its startup command. Reload tmux with Ctrl+B then `r`, or run
+`tmux source-file ~/.tmux.conf`. Reloading preserves running sessions.
+
 ## 🚀 Installation
 
 ```bash
